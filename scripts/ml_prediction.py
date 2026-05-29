@@ -4,44 +4,42 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import mean_absolute_error
 
-# Load BIG dataset
+# Load Dataset
+
 df = pd.read_csv("../data/healthcare_big_data.csv")
 
-# Convert dates
-df["admission_date"] = pd.to_datetime(df["admission_date"])
-df["discharge_date"] = pd.to_datetime(df["discharge_date"])
-
-# Create Length of Stay
-df["length_of_stay"] = (
-    df["discharge_date"] - df["admission_date"]
-).dt.days
-
 # Encode categorical columns
+
 gender_encoder = LabelEncoder()
 disease_encoder = LabelEncoder()
 city_encoder = LabelEncoder()
+status_encoder = LabelEncoder()
 
 df["gender"] = gender_encoder.fit_transform(df["gender"])
 df["disease"] = disease_encoder.fit_transform(df["disease"])
 df["city"] = city_encoder.fit_transform(df["city"])
+df["admission_status"] = status_encoder.fit_transform(
+    df["admission_status"]
+)
 
 # Features
+
 X = df[
     [
         "age",
         "gender",
         "disease",
         "city",
-        "hospital_bill",
-        "sugar_level",
-        "heart_rate"
+        "admission_status"
     ]
 ]
 
 # Target
-y = df["length_of_stay"]
+
+y = df["treatment_cost"]
 
 # Train Test Split
+
 X_train, X_test, y_train, y_test = train_test_split(
     X,
     y,
@@ -50,22 +48,26 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Model
+
 model = RandomForestRegressor(
     n_estimators=100,
     random_state=42
 )
 
-# Train Model
+# Train
+
 model.fit(X_train, y_train)
 
-# Predictions
+# Predict
+
 predictions = model.predict(X_test)
 
-# Evaluation
+# Evaluate
+
 mae = mean_absolute_error(y_test, predictions)
 
 print("=" * 60)
-print("HEALTHCARE LENGTH OF STAY PREDICTION MODEL")
+print("HEALTHCARE TREATMENT COST PREDICTION MODEL")
 print("=" * 60)
 
 print(f"\nDataset Size: {len(df)} Records")
@@ -75,5 +77,7 @@ print("\nSample Predictions:\n")
 
 for actual, predicted in zip(y_test.head(10), predictions[:10]):
     print(
-        f"Actual Stay: {actual} days | Predicted Stay: {round(predicted,2)} days"
+        f"Actual Cost: ₹{actual} | Predicted Cost: ₹{round(predicted,2)}"
     )
+
+print("\nModel Training Completed Successfully")

@@ -8,19 +8,21 @@ spark = SparkSession.builder \
 
 print("Spark Session Started Successfully")
 
-# STEP 2: Read Healthcare CSV
+# STEP 2: Read Healthcare Big Dataset
 
 df = spark.read.csv(
-    "../data/patients.csv",
+    "../data/healthcare_big_data.csv",
     header=True,
     inferSchema=True
 )
 
-print("\nHealthcare Dataset Loaded Using Spark")
+print("\nHealthcare Big Dataset Loaded Using Spark")
 
-# STEP 3: Show Dataset
+# STEP 3: Show First 10 Records
 
-df.show()
+print("\nFirst 10 Records")
+
+df.show(10)
 
 # STEP 4: Print Schema
 
@@ -33,3 +35,21 @@ df.printSchema()
 total_patients = df.count()
 
 print(f"\nTotal Patients: {total_patients}")
+
+# STEP 6: Disease Distribution
+
+print("\nDisease Distribution")
+
+df.groupBy("disease").count().show()
+
+# STEP 7: Average Treatment Cost
+
+print("\nAverage Treatment Cost")
+
+df.groupBy().avg("treatment_cost").show()
+
+print("\nPySpark Processing Completed Successfully")
+
+# STEP 8: Stop Spark Session
+
+spark.stop()
