@@ -7,7 +7,17 @@ This project is an end-to-end Healthcare Analytics Pipeline developed as an IIT 
 The project integrates Python, Pandas, Apache Airflow, PostgreSQL, PySpark, AWS S3, AWS RDS, Docker, and Streamlit to create a scalable healthcare analytics platform.
 
 ---
+## Live Dashboard
 
+Live Streamlit Dashboard:
+
+https://medicare-healthcare-dashboard.streamlit.app
+
+## GitHub Repository
+
+https://github.com/arpit-systems/healthcare-analytics-pipeline
+
+---
 ## Objectives
 
 * Build an automated ETL pipeline for healthcare data.
