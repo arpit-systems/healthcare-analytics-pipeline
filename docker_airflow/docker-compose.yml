@@ -1,0 +1,32 @@
+services:
+
+  postgres:
+    image: postgres:13
+
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+
+    ports:
+      - "5433:5432"
+
+  airflow:
+    image: apache/airflow:2.9.3
+
+    depends_on:
+      - postgres
+
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      PIP_ADDITIONAL_REQUIREMENTS: "pandas sqlalchemy psycopg2-binary"
+
+    volumes:
+      - ./dags:/opt/airflow/dags
+
+    ports:
+      - "8080:8080"
+
+    command: bash -c "sleep infinity"
