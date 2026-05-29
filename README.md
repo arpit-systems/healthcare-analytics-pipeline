@@ -206,9 +206,12 @@ healthcare-analytics-pipeline
 
 ## Author
 
-Arpit Sharma
+Arpit Sharma (G25AI1012)
+Ankita Dwivedi (G25AI1011)
+Astosh Ranjan (G25AI1013)
+Bharat Sharma (G25AI1014)
+Damini Khatri (G25AI1015)
 
-IIT Jodhpur Capstone Project
+IIT Jodhpur PGDDE Capstone Project
 
 Healthcare Analytics Pipeline for MediCare Hospital
-
