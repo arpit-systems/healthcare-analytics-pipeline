@@ -1,7 +1,40 @@
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
 venv/
+env/
+.venv/
+
+# VS Code
 .vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment Variables
 .env
+
+# Logs
 *.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Airflow
 airflow.db
+
+# Temporary Files
+temp/
+tmp/
+
+# AWS Credentials
+.aws/
+
+# Secrets
+credentials.json
+secrets.json
