@@ -4,9 +4,10 @@
 
 This project is an end-to-end Healthcare Analytics Pipeline developed as an IIT Jodhpur Capstone Project. The pipeline automates healthcare data ingestion, transformation, storage, analytics, machine learning, and dashboard visualization using modern Data Engineering technologies.
 
-The project integrates Python, Pandas, Apache Airflow, PostgreSQL, PySpark, AWS S3, AWS RDS, Docker, and Streamlit to create a scalable healthcare analytics platform.
+The project integrates Python, Pandas, Apache Kafka, Apache Airflow, Databricks, PySpark, PostgreSQL, AWS S3, AWS RDS, Docker, GitHub Actions CI/CD, Machine Learning, and Streamlit to create a scalable healthcare analytics platform.
 
 ---
+
 ## Live Dashboard
 
 Live Streamlit Dashboard:
@@ -18,6 +19,7 @@ https://medicare-healthcare-dashboard.streamlit.app
 https://github.com/arpit-systems/healthcare-analytics-pipeline
 
 ---
+
 ## Objectives
 
 * Build an automated ETL pipeline for healthcare data.
@@ -29,46 +31,58 @@ https://github.com/arpit-systems/healthcare-analytics-pipeline
 * Generate healthcare insights using SQL analytics.
 * Build interactive dashboards using Streamlit.
 * Implement Machine Learning for Length of Stay Prediction.
+* Demonstrate real-time healthcare data streaming using Apache Kafka.
+* Validate PySpark processing using Databricks notebooks.
+* Implement CI/CD automation using GitHub Actions.
 
 ---
 
 ## Technology Stack
 
-### Programming
+### Data Engineering & ETL
 
 * Python
-
-### Database
-
-* PostgreSQL
-* AWS RDS PostgreSQL
-
-### Workflow Orchestration
-
+* Pandas
 * Apache Airflow
 
-### Big Data Processing
+### Data Streaming
+
+* Apache Kafka
+
+### Big Data Processing & Management
 
 * Apache Spark
 * PySpark
+* Databricks
+
+### Database & Data Warehousing
+
+* PostgreSQL
+* AWS RDS PostgreSQL
+* Star Schema Data Warehouse
 
 ### Cloud Services
 
 * AWS S3
 * AWS RDS
 
-### Containerization
-
-* Docker
-* Docker Compose
-
-### Dashboard
-
-* Streamlit
-
 ### Machine Learning
 
 * Scikit-Learn
+* Random Forest Regressor
+
+### Dashboard & Visualization
+
+* Streamlit
+* Matplotlib
+
+### DevOps & MLOps
+
+* Docker
+* Docker Compose
+* Git
+* GitHub
+* GitHub Actions (CI/CD)
 
 ---
 
@@ -78,23 +92,23 @@ Healthcare Dataset (CSV)
 
 ↓
 
-AWS S3 Cloud Storage
+AWS S3 Data Lake
 
 ↓
 
-Pandas ETL Pipeline
+Apache Kafka Streaming Layer
 
 ↓
 
-Data Cleaning & Transformation
+Python ETL Pipeline (Pandas)
 
 ↓
 
-PySpark Big Data Processing
+Databricks / PySpark Big Data Processing
 
 ↓
 
-AWS RDS PostgreSQL Database
+AWS RDS PostgreSQL
 
 ↓
 
@@ -107,6 +121,10 @@ Apache Airflow Workflow Automation
 ↓
 
 SQL Analytics Layer
+
+↓
+
+Machine Learning (Random Forest)
 
 ↓
 
@@ -129,6 +147,9 @@ Healthcare Insights & Reporting
 * Interactive Dashboard
 * Predictive Modeling
 * Healthcare Reporting
+* Apache Kafka streaming demonstration
+* Databricks notebook integration
+* GitHub Actions CI/CD automation
 
 ---
 
@@ -136,7 +157,7 @@ Healthcare Insights & Reporting
 
 A Machine Learning model was implemented to predict patient Length of Stay using healthcare attributes.
 
-Features Used:
+### Features Used
 
 * Age
 * Gender
@@ -146,7 +167,7 @@ Features Used:
 * Sugar Level
 * Heart Rate
 
-Evaluation Metric:
+### Evaluation Metric
 
 * Mean Absolute Error (MAE)
 
@@ -156,7 +177,7 @@ Evaluation Metric:
 
 EDA was performed on a healthcare dataset containing 5000 records.
 
-Analysis Included:
+### Analysis Included
 
 * Disease Distribution
 * Gender Distribution
@@ -171,47 +192,92 @@ Analysis Included:
 
 healthcare-analytics-pipeline
 
-├── data
+├── .github
+
+│   └── workflows
+
+│       └── main.yml
 
 ├── dashboards
 
+│   ├── app.py
+
+│   └── app_live.py
+
+├── data
+
+│   ├── patients.csv
+
+│   └── healthcare_big_data.csv
+
 ├── docker_airflow
 
-├── scripts
+│   ├── dags
 
-├── sql
+│   │   └── healthcare_etl_dag.py
 
-├── screenshots
+│   └── docker-compose.yml
 
 ├── docs
 
+├── kafka_demo
+
+│   ├── producer.py
+
+│   └── consumer.py
+
+├── screenshots
+
+├── scripts
+
+│   ├── etl_pipeline.py
+
+│   ├── spark_pipeline.py
+
+│   ├── data_warehouse.py
+
+│   ├── ml_prediction.py
+
+│   └── eda_analysis.py
+
+├── sql
+
+│   └── healthcare_queries.sql
+
+├── weekly_reports
+
+├── README.md
+
 ├── requirements.txt
 
-├── .gitignore
-
-└── README.md
+└── .gitignore
 
 ---
 
 ## Future Scope
 
-* Real-Time Data Streaming
-* Advanced Machine Learning Models
-* Power BI Integration
-* Cloud Deployment
-* Kubernetes Deployment
-* Healthcare Alerting Systems
+* Enterprise-scale Apache Kafka streaming architecture
+* Snowflake Data Warehouse integration
+* Advanced Machine Learning models
+* Kubernetes-based deployment
+* Power BI integration
+* Healthcare alerting and monitoring systems
 
 ---
 
 ## Authors
 
-- Arpit Sharma (G25AI1012)
-- Ankita Dwivedi (G25AI1011)
-- Astosh Ranjan (G25AI1013)
-- Bharat Sharma (G25AI1014)
-- Damini Khatri (G25AI1015)
+* Arpit Sharma (G25AI1012)
+* Ankita Dwivedi (G25AI1011)
+* Astosh Ranjan (G25AI1013)
+* Bharat Sharma (G25AI1014)
+* Damini Khatri (G25AI1015)
 
-**IIT Jodhpur PGDDE Capstone Project**
+---
 
-**Healthcare Analytics Pipeline for MediCare Hospital**
+## Institution
+
+IIT Jodhpur PGDDE Capstone Project
+
+Healthcare Analytics Pipeline for MediCare Hospital
+
