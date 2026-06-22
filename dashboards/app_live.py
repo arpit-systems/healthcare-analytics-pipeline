@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import mysql.connector
 from datetime import datetime
 
 # --------------------------------
@@ -35,19 +34,10 @@ st.caption(
 )
 
 # --------------------------------
-# MYSQL CONNECTION
+# DATA LOADING
 # --------------------------------
 
-connection = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Root@123",
-    database="healthcare_db"
-)
-
-query = "SELECT * FROM healthcare_records"
-
-df = pd.read_sql(query, connection)
+df = pd.read_csv("data/healthcare_big_data.csv")
 
 # --------------------------------
 # DATE CONVERSION
@@ -248,9 +238,3 @@ st.markdown("---")
 st.markdown(
     "Healthcare Analytics Pipeline Project | IIT Jodhpur Capstone"
 )
-
-# --------------------------------
-# CLOSE CONNECTION
-# --------------------------------
-
-connection.close()
