@@ -8,14 +8,15 @@ The project integrates Python, Pandas, Apache Kafka, Apache Airflow, Databricks,
 
 ---
 
-## Live Dashboard
+## Live Application
 
-Live Streamlit Dashboard:
-
+🌐 Dashboard:
 https://medicare-healthcare-dashboard.streamlit.app
 
-## GitHub Repository
+🎥 Project Demonstration Video:
+https://youtu.be/UrSpc5HoDVE?si=_dz4GhgvGaVl0awa
 
+💻 GitHub Repository:
 https://github.com/arpit-systems/healthcare-analytics-pipeline
 
 ---
