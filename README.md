@@ -154,6 +154,23 @@ Healthcare Insights & Reporting
 
 ---
 
+## Dashboard Screenshots
+
+The Streamlit dashboard provides interactive healthcare analytics and filter-based visualizations.
+
+### Available Dashboard Views
+
+- Complete Dashboard Overview
+- Monthly Admission Trend
+- Disease Distribution
+- Admission Status Analysis
+- Top Treatment Costs
+- Filter Analytics (Disease, Gender & City)
+
+Dashboard screenshots are available in the `screenshots` folder of this repository.
+
+---
+
 ## Machine Learning Module
 
 A Machine Learning model was implemented to predict patient Length of Stay using healthcare attributes.
