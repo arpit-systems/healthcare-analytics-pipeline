@@ -8,3 +8,5 @@ streamlit
 scikit-learn
 matplotlib
 boto3
+mysql-connector-python
+kafka-python
