@@ -31,7 +31,7 @@ https://github.com/arpit-systems/healthcare-analytics-pipeline
 * Design a Star Schema Data Warehouse.
 * Generate healthcare insights using SQL analytics.
 * Build interactive dashboards using Streamlit.
-* Implement Machine Learning for Length of Stay Prediction.
+* Implement Machine Learning for Treatment Cost Prediction.
 * Demonstrate real-time healthcare data streaming using Apache Kafka.
 * Validate PySpark processing using Databricks notebooks.
 * Implement CI/CD automation using GitHub Actions.
@@ -173,7 +173,7 @@ Dashboard screenshots are available in the `screenshots` folder of this reposito
 
 ## Machine Learning Module
 
-A Machine Learning model was implemented to predict patient Length of Stay using healthcare attributes.
+A Machine Learning model was implemented to predict treatment cost using healthcare attributes.
 
 ### Features Used
 
@@ -181,9 +181,7 @@ A Machine Learning model was implemented to predict patient Length of Stay using
 * Gender
 * Disease
 * City
-* Hospital Bill
-* Sugar Level
-* Heart Rate
+* Admission Status
 
 ### Evaluation Metric
 
