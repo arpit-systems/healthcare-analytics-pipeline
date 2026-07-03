@@ -283,8 +283,8 @@ healthcare-analytics-pipeline
 
 ## Authors
 
-* Arpit Sharma (G25AI1012)
 * Ankita Dwivedi (G25AI1011)
+* Arpit Sharma (G25AI1012)
 * Astosh Ranjan (G25AI1013)
 * Bharat Sharma (G25AI1014)
 * Damini Khatri (G25AI1015)
